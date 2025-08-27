@@ -2,7 +2,6 @@ package com.api.company.dto;
 
 public class CompanyDTO {
 
-
     private String codigo_company;
     private String name_company;
     private String description_company;
