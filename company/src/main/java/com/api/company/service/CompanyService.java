@@ -23,7 +23,7 @@ public class CompanyService {
         return companyRepository.findAll();
     }
 
-    public Optional<Company> findById(Integer id) {
+    public Optional<Company> findById(int id) {
         return companyRepository.findById(id);
     }
 
@@ -33,6 +33,18 @@ public class CompanyService {
 
     public void delete(Integer id) {
         companyRepository.deleteById(id);
+    }
+
+    public boolean existsById(int idCompany){
+        return companyRepository.existsById(idCompany);
+    }
+
+    public boolean existsByCodigoCompany(String codigoCompany){
+        return companyRepository.existsByCodigoCompany(codigoCompany);
+    }
+
+    public boolean existsByNameCompany(String nameCompany){
+        return companyRepository.existsByNameCompany(nameCompany);
     }
 
     public List<CompanyAppVersionDTO> getCompanyAppVersions(String codigoCompany) {

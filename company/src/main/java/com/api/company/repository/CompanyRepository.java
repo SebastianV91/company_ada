@@ -12,6 +12,10 @@ import java.util.List;
 @Repository
 public interface CompanyRepository extends JpaRepository<Company, Integer> {
 
+    boolean existsByCodigoCompany(String codigoCompany);
+
+    boolean existsByNameCompany(String nameCompany);
+
     @Query("SELECT new com.api.company.dto.CompanyAppVersionDTO(c.codigoCompany, c.nameCompany, a.appName, v.version) " +
             "FROM Company c " +
             "JOIN VersionCompany vc ON vc.company = c " +
