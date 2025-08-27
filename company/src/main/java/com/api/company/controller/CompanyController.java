@@ -62,6 +62,17 @@ public class CompanyController {
         return new ResponseEntity(new Mensaje("Compania actualizada"), HttpStatus.OK);
     }
 
+    @DeleteMapping("/delete/{idCompany}")
+    public ResponseEntity<?> delete(@PathVariable("idCompany") int idCompany){
+
+        if(!companyService.existsById(idCompany))
+            return new ResponseEntity(new Mensaje("Este id no existe"), HttpStatus.NOT_FOUND);
+        
+        companyService.delete(idCompany);
+        return new ResponseEntity(new Mensaje("Producto eliminado"), HttpStatus.OK);
+
+    }
+
     @GetMapping("/{codigoCompany}/versions")
     public List<CompanyAppVersionDTO> getCompanyAppVersions(@PathVariable String codigoCompany) {
         return companyService.getCompanyAppVersions(codigoCompany);
