@@ -23,9 +23,6 @@ public class Version {
     @Column(name = "version_description")
     private String versionDescription;
 
-    @OneToMany(mappedBy = "version", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Set<VersionCompany> versionCompanies;
-
     public Integer getId() {
         return id;
     }
@@ -56,14 +53,6 @@ public class Version {
 
     public void setVersionDescription(String versionDescription) {
         this.versionDescription = versionDescription;
-    }
-
-    public Set<VersionCompany> getVersionCompanies() {
-        return versionCompanies;
-    }
-
-    public void setVersionCompanies(Set<VersionCompany> versionCompanies) {
-        this.versionCompanies = versionCompanies;
     }
 
 }

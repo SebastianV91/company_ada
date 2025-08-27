@@ -18,9 +18,6 @@ public class Company {
 
     private String descriptionCompany;
 
-    @OneToMany(mappedBy = "company", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Set<VersionCompany> versionCompanies;
-
     public Company() {
     }
 
@@ -61,13 +58,5 @@ public class Company {
     public void setDescriptionCompany(String descriptionCompany) {
         this.descriptionCompany = descriptionCompany;
     }
-
-    public Set<VersionCompany> getVersionCompanies() {
-        return versionCompanies;
-    }
-
-    public void setVersionCompanies(Set<VersionCompany> versionCompanies) {
-        this.versionCompanies = versionCompanies;
-    }
-
+    
 }
