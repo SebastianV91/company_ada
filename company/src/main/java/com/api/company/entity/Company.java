@@ -1,31 +1,25 @@
 package com.api.company.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
+import java.util.Set;
 
 @Entity
+@Table(name = "company")
 public class Company {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id_company;
 
-    private String codigo_company;
+    private String codigoCompany;
 
-    private String name_company;
+    private String nameCompany;
 
-    private String description_company;
+    private String descriptionCompany;
 
-    public Company() {
-    }
-
-    public Company(String codigo_company, String name_company, String description_company) {
-        this.codigo_company = codigo_company;
-        this.name_company = name_company;
-        this.description_company = description_company;
-    }
+    @OneToMany(mappedBy = "version", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<VersionCompany> versionCompanies;
 
     public int getId_company() {
         return id_company;
@@ -35,28 +29,36 @@ public class Company {
         this.id_company = id_company;
     }
 
-    public String getCodigo_company() {
-        return codigo_company;
+    public String getCodigoCompany() {
+        return codigoCompany;
     }
 
-    public void setCodigo_company(String codigo_company) {
-        this.codigo_company = codigo_company;
+    public void setCodigoCompany(String codigoCompany) {
+        this.codigoCompany = codigoCompany;
     }
 
-    public String getName_company() {
-        return name_company;
+    public String getNameCompany() {
+        return nameCompany;
     }
 
-    public void setName_company(String name_company) {
-        this.name_company = name_company;
+    public void setNameCompany(String nameCompany) {
+        this.nameCompany = nameCompany;
     }
 
-    public String getDescription_company() {
-        return description_company;
+    public String getDescriptionCompany() {
+        return descriptionCompany;
     }
 
-    public void setDescription_company(String description_company) {
-        this.description_company = description_company;
+    public void setDescriptionCompany(String descriptionCompany) {
+        this.descriptionCompany = descriptionCompany;
+    }
+
+    public Set<VersionCompany> getVersionCompanies() {
+        return versionCompanies;
+    }
+
+    public void setVersionCompanies(Set<VersionCompany> versionCompanies) {
+        this.versionCompanies = versionCompanies;
     }
 
 }
