@@ -1,22 +1,18 @@
 package com.api.company.dto;
 
-import org.springframework.stereotype.Service;
-
-
 public class Mensaje {
 
-    private String Mensaje;
+    private String mensaje;
 
     public Mensaje(String mensaje) {
-        Mensaje = mensaje;
+        this.mensaje = mensaje;
     }
 
     public String getMensaje() {
-        return Mensaje;
+        return mensaje;
     }
 
     public void setMensaje(String mensaje) {
-        Mensaje = mensaje;
+        this.mensaje = mensaje;
     }
-
 }

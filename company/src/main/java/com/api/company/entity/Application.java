@@ -17,10 +17,10 @@ public class Application {
     private String code;
 
     @Column(name = "app_name", nullable = false)
-    private String name;
+    private String appName;
 
     @Column(name = "app_description")
-    private String description;
+    private String appDescription;
 
     @OneToMany(mappedBy = "application", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<Version> versions;
@@ -41,20 +41,12 @@ public class Application {
         this.code = code;
     }
 
-    public String getName() {
-        return name;
+    public String getAppName() {
+        return appName;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
+    public void setAppName(String appName) {
+        this.appName = appName;
     }
 
     public Set<Version> getVersions() {

@@ -21,7 +21,7 @@ public class Version {
     private String version;
 
     @Column(name = "version_description")
-    private String description;
+    private String versionDescription;
 
     @OneToMany(mappedBy = "version", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<VersionCompany> versionCompanies;
@@ -50,12 +50,12 @@ public class Version {
         this.version = version;
     }
 
-    public String getDescription() {
-        return description;
+    public String getVersionDescription() {
+        return versionDescription;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setVersionDescription(String versionDescription) {
+        this.versionDescription = versionDescription;
     }
 
     public Set<VersionCompany> getVersionCompanies() {

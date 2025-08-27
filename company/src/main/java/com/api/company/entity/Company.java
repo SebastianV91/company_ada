@@ -10,7 +10,7 @@ public class Company {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id_company;
+    private int idCompany;
 
     private String codigoCompany;
 
@@ -18,15 +18,24 @@ public class Company {
 
     private String descriptionCompany;
 
-    @OneToMany(mappedBy = "version", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "company", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<VersionCompany> versionCompanies;
 
-    public int getId_company() {
-        return id_company;
+    public Company() {
     }
 
-    public void setId_company(int id_company) {
-        this.id_company = id_company;
+    public Company(String codigoCompany, String nameCompany, String descriptionCompany) {
+        this.codigoCompany = codigoCompany;
+        this.nameCompany = nameCompany;
+        this.descriptionCompany = descriptionCompany;
+    }
+
+    public int getIdCompany() {
+        return idCompany;
+    }
+
+    public void setIdCompany(int idCompany) {
+        this.idCompany = idCompany;
     }
 
     public String getCodigoCompany() {

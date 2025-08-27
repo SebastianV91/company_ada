@@ -2,41 +2,41 @@ package com.api.company.dto;
 
 public class CompanyDTO {
 
-    private String codigo_company;
-    private String name_company;
-    private String description_company;
+    private String codigoCompany;
+    private String nameCompany;
+    private String descriptionCompany;
 
     public CompanyDTO() {
     }
 
-    public CompanyDTO(String codigo_company, String name_company, String description_company) {
-        this.codigo_company = codigo_company;
-        this.name_company = name_company;
-        this.description_company = description_company;
+    public CompanyDTO(String codigoCompany, String nameCompany, String descriptionCompany) {
+        this.codigoCompany = codigoCompany;
+        this.nameCompany = nameCompany;
+        this.descriptionCompany = descriptionCompany;
     }
 
-    public String getCodigo_company() {
-        return codigo_company;
+    public String getCodigoCompany() {
+        return codigoCompany;
     }
 
-    public void setCodigo_company(String codigo_company) {
-        this.codigo_company = codigo_company;
+    public void setCodigoCompany(String codigoCompany) {
+        this.codigoCompany = codigoCompany;
     }
 
-    public String getName_company() {
-        return name_company;
+    public String getNameCompany() {
+        return nameCompany;
     }
 
-    public void setName_company(String name_company) {
-        this.name_company = name_company;
+    public void setNameCompany(String nameCompany) {
+        this.nameCompany = nameCompany;
     }
 
-    public String getDescription_company() {
-        return description_company;
+    public String getDescriptionCompany() {
+        return descriptionCompany;
     }
 
-    public void setDescription_company(String description_company) {
-        this.description_company = description_company;
+    public void setDescriptionCompany(String descriptionCompany) {
+        this.descriptionCompany = descriptionCompany;
     }
 
 }
